@@ -101,7 +101,8 @@ obtainInstruction("steak", 0)
       (document.querySelector("#steak").innerHTML += `<li>${step7}</li>
       <li>Steak is ready!</li>
       `)
-  );
+  )
+  .catch((error) => console.log(error));
 
 // Iteration 3 using async/await
 // ...
