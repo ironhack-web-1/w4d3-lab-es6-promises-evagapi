@@ -96,12 +96,12 @@ obtainInstruction("steak", 0)
       (document.querySelector("#steak").innerHTML += `<li>${step6}</li>`)
   )
   .then(() => obtainInstruction("steak", 7))
-  .then(
-    (step7) =>
-      (document.querySelector("#steak").innerHTML += `<li>${step7}</li>
+  .then((step7) => {
+    document.querySelector("#steak").innerHTML += `<li>${step7}</li>
       <li>Steak is ready!</li>
-      `)
-  )
+      `;
+    document.querySelector("#steakImg").removeAttribute("hidden");
+  })
   .catch((error) => console.log(error));
 
 // Iteration 3 using async/await
@@ -122,6 +122,7 @@ async function makeBroccoli() {
     document.querySelector(
       "#broccoli"
     ).innerHTML += `<li>Broccoli is ready!</li>`;
+    document.querySelector("#broccoliImg").removeAttribute("hidden");
   }
 }
 
