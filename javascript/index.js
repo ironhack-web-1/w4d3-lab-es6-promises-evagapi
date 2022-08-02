@@ -105,7 +105,28 @@ obtainInstruction("steak", 0)
   .catch((error) => console.log(error));
 
 // Iteration 3 using async/await
-// ...
+
+function printInstruction(instruction) {
+  document.querySelector("#broccoli").innerHTML += `<li>${instruction}</li>`;
+}
+
+async function makeBroccoli() {
+  try {
+    for (let i = 0; i < 7; i++) {
+      let step = await obtainInstruction("broccoli", i);
+      printInstruction(step);
+      if (i === 6) {
+        document.querySelector(
+          "#broccoli"
+        ).innerHTML += `<li>Broccoli is ready!</li>`;
+      }
+    }
+  } catch (error) {
+    console.log("Something went wrong");
+  }
+}
+
+makeBroccoli();
 
 // Bonus 2 - Promise all
 // ...
