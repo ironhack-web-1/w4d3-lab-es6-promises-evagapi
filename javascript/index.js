@@ -115,18 +115,19 @@ async function makeBroccoli() {
     for (let i = 0; i < 7; i++) {
       let step = await obtainInstruction("broccoli", i);
       printInstruction(step);
-      if (i === 6) {
-        document.querySelector(
-          "#broccoli"
-        ).innerHTML += `<li>Broccoli is ready!</li>`;
-      }
     }
   } catch (error) {
     console.log("Something went wrong");
+  } finally {
+    document.querySelector(
+      "#broccoli"
+    ).innerHTML += `<li>Broccoli is ready!</li>`;
   }
 }
 
 makeBroccoli();
+
+// Bonus 1 - Remove the hidden attribute from the images
 
 // Bonus 2 - Promise all
 // ...
