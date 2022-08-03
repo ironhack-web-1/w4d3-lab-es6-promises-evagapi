@@ -112,17 +112,16 @@ function printInstruction(instruction) {
 
 async function makeBroccoli() {
   try {
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < broccoli.length; i++) {
       let step = await obtainInstruction("broccoli", i);
       printInstruction(step);
     }
-  } catch (error) {
-    console.log("Something went wrong");
-  } finally {
     document.querySelector(
       "#broccoli"
     ).innerHTML += `<li>Broccoli is ready!</li>`;
     document.querySelector("#broccoliImg").removeAttribute("hidden");
+  } catch (error) {
+    console.error("Something went wrong");
   }
 }
 
